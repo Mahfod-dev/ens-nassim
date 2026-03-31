@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENS LAMAR - Nettoyage professionnel à Lyon</title>
+    <style>
+        /* --- Palette de couleurs basée sur votre logo --- */
+        :root {
+            --bleu-marine: #0e305e;
+            --bleu-clair: #205094;
+            --gris: #888d92;
+            --gris-clair: #f4f6f9;
+            --blanc: #ffffff;
+            --noir: #222222;
+        }
+
+        /* --- Styles de base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            color: var(--noir);
+            line-height: 1.6;
+            background-color: var(--blanc);
+        }
+        h1, h2, h3 {
+            color: var(--bleu-marine);
+            margin-bottom: 15px;
+        }
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        /* --- En-tête (Header) --- */
+        header {
+            background-color: var(--blanc);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            color: var(--bleu-marine);
+            font-size: 1.2rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        nav a {
+            color: var(--bleu-marine);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+        nav a:hover {
+            color: var(--bleu-clair);
+        }
+        .btn-contact {
+            background-color: var(--bleu-marine);
+            padding: 10px 22px;
+            border-radius: 4px;
+            color: var(--blanc) !important;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .btn-contact:hover {
+            background-color: var(--bleu-clair);
+            transform: translateY(-2px);
+        }
+
+        /* --- Section Héro (Accueil) --- */
+        .hero {
+            background: linear-gradient(rgba(14, 48, 94, 0.85), rgba(14, 48, 94, 0.75)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            color: var(--blanc);
+            text-align: center;
+            padding: 120px 20px;
+        }
+        .hero h1 {
+            color: var(--blanc);
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .hero h2 {
+            color: var(--blanc);
+            font-weight: 300;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            color: rgba(255,255,255,0.9);
+        }
+        .hero .btn-main {
+            background-color: var(--gris);
+            color: var(--blanc);
+            padding: 18px 35px;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .hero .btn-main:hover {
+            background-color: #71767a;
+            transform: scale(1.05);
+        }
+
+        /* --- Section Expertise & Services --- */
+        .services {
+            background-color: var(--gris-clair);
+            text-align: center;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background: var(--blanc);
+            padding: 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--bleu-marine);
+            transition: 0.3s;
+            overflow: hidden;
+            text-align: left;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 25px;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* --- Section Exigences (Rigueur) --- */
+        .rigueur {
+            background-color: var(--bleu-marine);
+            color: var(--blanc);
+            padding: 80px 20px;
+        }
+        .rigueur h2 {
+            color: var(--blanc);
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+        }
+        .rigueur-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .rigueur-box {
+            flex: 1;
+            min-width: 320px;
+            background: rgba(255,255,255,0.05);
+            padding: 35px;
+            border-radius: 8px;
+            border-left: 6px solid var(--gris);
+        }
+        .rigueur-box h3 {
+            color: var(--blanc);
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        .rigueur-box ul {
+            list-style-type: none;
+        }
+        .rigueur-box li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .rigueur-box li::before {
+            content: '✔';
+            color: var(--gris);
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .alerte {
+            color: #ff6b6b !important;
+            font-weight: bold;
+        }
+
+        /* --- Section Contact & Formulaire --- */
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        .contact-form-container {
+            flex: 1.3;
+            min-width: 350px;
+            background: var(--blanc);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        .contact-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--bleu-marine);
+            font-size: 0.9rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--bleu-clair);
+        }
+        .btn-submit {
+            background-color: var(--bleu-marine);
+            color: var(--blanc);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: var(--bleu-clair);
+        }
+
+        .contact-info {
+            flex: 0.7;
+            min-width: 300px;
+            background: var(--gris-clair);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e1e4e8;
+        }
+        .contact-info h3 {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+        .info-item {
+            margin-bottom: 20px;
+        }
+        .info-item strong {
+            display: block;
+            color: var(--bleu-marine);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .info-item p, .info-item a {
+            font-size: 1.05rem;
+            color: var(--noir);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--noir);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .contact-section {
+                flex-direction: column;
+            }
+            .contact-form-container, .contact-info {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100">
+                    <rect x="20" y="20" width="60" height="60" fill="#0e305e" rx="5"/>
+                    <path d="M40 40 L60 60 M60 40 L40 60" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+                <span>ENS LAMAR</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#specialites">Spécialités</a></li>
+                    <li><a href="#exigences">Nos Exigences</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn-contact">Essai Gratuit</a>
+        </div>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="container">
+            <h1>ENS LAMAR</h1>
+            <h2>L'excellence du nettoyage en milieu exigeant à Lyon</h2>
+            <p>Intervention tactique, rigueur absolue et efficacité garantie. Nous sécurisons l'hygiène de vos zones sensibles et complexes.</p>
+            <a href="#contact" class="btn-main">Demander une évaluation gratuite</a>
+        </div>
+    </section>
+
+    <section id="specialites" class="services container">
+        <h2>Secteurs d'Intervention Haute Performance</h2>
+        <p>Une expertise technique dédiée aux environnements où l'hygiène est un impératif de sécurité.</p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=800&q=80" alt="Nettoyage salle de sport professionnel" class="card-img">
+                <div class="card-content">
+                    <h3>Salles de Sport & Fitness</h3>
+                    <p>Désinfection microbiologique des équipements de musculation, tapis de sol et sanitaires. Élimination radicale des odeurs et bactéries.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Nettoyage salle blanche laboratoire" class="card-img">
+                <div class="card-content">
+                    <h3>Milieu Médical & Salles Blanches</h3>
+                    <p>Décontamination de particules, respect des classes ISO et protocoles aseptiques pour laboratoires et centres médicaux spécialisés.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Nettoyage zone industrielle sécurisée" class="card-img">
+                <div class="card-content">
+                    <h3>Zones Sensibles & Tertiaire</h3>
+                    <p>Intervention en milieux sécurisés (Aéroports, Data Centers, Industrie) nécessitant des habilitations spécifiques et une discrétion totale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="exigences" class="rigueur">
+        <div class="container">
+            <h2>Notre Engagement : Une Rigueur Sans Concession</h2>
+            <div class="rigueur-content">
+                <div class="rigueur-box">
+                    <h3>Notre politique Tolérance Zéro</h3>
+                    <ul>
+                        <li class="alerte">Retard = refus d'intervention automatique</li>
+                        <li class="alerte">Erreur de protocole = fin immédiate de mission</li>
+                        <li>Respect absolu et militaire des consignes</li>
+                        <li>Contrôle qualité systématique après chaque passage</li>
+                    </ul>
+                </div>
+                <div class="rigueur-box">
+                    <h3>Maîtrise opérationnelle</h3>
+                    <ul>
+                        <li>Gestion des flux et pics de fréquentation</li>
+                        <li>Rapidité d'exécution sans dégradation de la qualité</li>
+                        <li>Agents formés à la gestion du stress en milieu public</li>
+                        <li>Utilisation de produits éco-responsables haute performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="contact-section">
+            <div class="contact-form-container">
+                <h2>Demander un essai gratuit</h2>
+                <p style="margin-bottom: 25px; color: #666;">Remplissez ce formulaire pour recevoir une proposition d'intervention sous 24h.</p>
+                
+                <form class="contact-form" action="https://formspree.io/f/akarite@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom complet / Entreprise</label>
+                        <input type="text" id="name" name="name" placeholder="Ex: Jean Dupont - Fitness Lyon" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre besoin (Salle de sport, médical, etc.)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement vos locaux et vos exigences..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer ma demande</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact Direct</h3>
+                
+                <div class="info-item">
+                    <strong>Responsable Opérationnel</strong>
+                    <p>Mr LAMARI NASSIM</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>Ligne Directe</strong>
+                    <p><a href="tel:0620312142" style="color: var(--bleu-clair); font-weight: bold;">06 20 31 21 42</a></p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>Email</strong>
+                    <p><a href="mailto:akarite@gmail.com" style="color: var(--bleu-clair); font-weight: bold;">akarite@gmail.com</a></p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>Siège Social</strong>
+                    <p>14 avenue Charles De Gaulle,<br>69800 Saint Priest</p>
+                </div>
+
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+                    <p style="font-style: italic; font-size: 0.9rem; color: #666;">"Nous intervenons sur toute la métropole de Lyon et sa périphérie."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="padding: 0;">
+            <p>&copy; 2026 ENS LAMAR - Experts en Nettoyage Spécialisé. Tous droits réservés.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Lyon | Saint-Priest | Auvergne-Rhône-Alpes</p>
+        </div>
+    </footer>
+
+</body>
+</html>
